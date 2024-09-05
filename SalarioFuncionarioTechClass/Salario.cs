@@ -4,34 +4,10 @@ namespace SalarioFuncionarioTechClass
 {
     public class Salario
     {
-        private string _nome;
-        private double _salarioBruto;
-        private double _imposto;
-        private double _porcentagem;
-
-        public string Nome
-        {
-            get { return _nome; }
-            set { _nome = value; }
-        }
-
-        public double SalarioBruto
-        {
-            get { return _salarioBruto; }
-            set { _salarioBruto = value; }
-        }
-
-        public double Imposto
-        {
-            get { return _imposto; }
-            set { _imposto = value; }
-        }
-
-        public double Porcentagem
-        {
-            get { return _porcentagem; }
-            set { _porcentagem = value; }
-        }
+        public string Nome { get; set; }
+        public double SalarioBruto { get; set; }
+        public double Imposto { get; set; }
+        public double Porcentagem { get; set; }
 
         public Salario(string nome, double salarioBruto, double imposto, double porcentagem)
         {
@@ -43,12 +19,12 @@ namespace SalarioFuncionarioTechClass
 
         public double CalculaSalarioLiquido()
         {
-            return SalarioBruto - (SalarioBruto * Imposto / 100); ; 
+            return SalarioBruto - (SalarioBruto * Imposto / 100);
         }
 
         public void AumentaSalario(double porcentagem)
         {
-            SalarioBruto += SalarioBruto * porcentagem / 100.00;
+            SalarioBruto += SalarioBruto * porcentagem / 100;
         }
 
         public override string ToString()
@@ -58,10 +34,5 @@ namespace SalarioFuncionarioTechClass
                    $"Imposto: {Imposto:F2}%\n" +
                    $"Salário Líquido: {CalculaSalarioLiquido():F2}";
         }
-
     }
 }
-
-
-
-       
